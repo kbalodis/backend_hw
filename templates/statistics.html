@@ -8,8 +8,15 @@
     {% extends "template.html" %}
     {% block content %}
     
-    <h1> My First Try Using Flask </h1>
-    <p> Flask is Fun </p>
+    <h1>Sample Statistics</h1>
+    <p>Count: {{ count }}</p>
+    <p>Mean: {{ mean }}</p>
+    <p>Variance: {{ variance }}</p>
+    <p>Is Gaussian: {{ is_gaussian }}</p>
+    {% if confidence_interval %}
+      <p>95% Confidene Interval: {{ confidence_interval[0] }} - {{ confidence_interval[1] }} </p>
+    {% endif %}
+    <p>Stationarity: {{ stationarity }}</p>
     
     {% endblock %}
   </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KPI Berry</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <div class="formwrapper">
+        <h1 class="title">Edit Record</h1>
+        <form method="POST" action="{{ url_for('edit', id=id) }}">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <div class="form-field">{{ form.value.label }} {{ form.value(size=20) }}</div>
+            {{ form.submit }}
+        </form>
+      </div>
+
+    {% endblock %}
+  </body>
+</html>
